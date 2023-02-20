@@ -1,0 +1,110 @@
+[
+ {
+  "dimension_defaults": [
+   {
+    "company": "Diamond Pharma",
+    "default_dimension": null,
+    "mandatory_for_bs": 0,
+    "mandatory_for_pl": 0,
+    "parent": "Asse[
+ {
+  "dimension_defaults": [
+   {
+    "company": "Diamond Pharma",
+    "default_dimension": null,
+    "mandatory_for_bs": 0,
+    "mandatory_for_pl": 0,
+    "parent": "Asset",
+    "parentfield": "dimension_defaults",
+    "parenttype": "Accounting Dimension",
+    "reference_document": "Asset"
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Accounting Dimension",
+  "document_type": "Asset",
+  "fieldname": "asset",
+  "label": "Asset",
+  "modified": "2022-10-10 10:22:02.867272",
+  "name": "Asset",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "dimension_defaults": [
+   {
+    "company": "Diamond Pharma",
+    "default_dimension": null,
+    "mandatory_for_bs": 0,
+    "mandatory_for_pl": 0,
+    "parent": "Export Pledge",
+    "parentfield": "dimension_defaults",
+    "parenttype": "Accounting Dimension",
+    "reference_document": "Export Pledge"
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Accounting Dimension",
+  "document_type": "Export Pledge",
+  "fieldname": "export_pledge",
+  "label": "Export Pledge",
+  "modified": "2022-10-10 10:21:48.486963",
+  "name": "Export Pledge",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "dimension_defaults": [
+   {
+    "company": "Diamond Pharma",
+    "default_dimension": null,
+    "mandatory_for_bs": 0,
+    "mandatory_for_pl": 0,
+    "parent": "Maintenance Subject",
+    "parentfield": "dimension_defaults",
+    "parenttype": "Accounting Dimension",
+    "reference_document": "Maintenance Subject"
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Accounting Dimension",
+  "document_type": "Maintenance Subject",
+  "fieldname": "maintenance_subject",
+  "label": "Maintenance Subject",
+  "modified": "2022-10-10 10:21:38.965373",
+  "name": "Maintenance Subject",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "dimension_defaults": [
+   {
+    "company": "Diamond Pharma",
+    "default_dimension": null,
+    "mandatory_for_bs": 0,
+    "mandatory_for_pl": 0,
+    "parent": "Item Group",
+    "parentfield": "dimension_defaults",
+    "parenttype": "Accounting Dimension",
+    "reference_document": "Item Group"
+   }
+  ],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Accounting Dimension",
+  "document_type": "Item Group",
+  "fieldname": "item_group",
+  "label": "Item Group",
+  "modified": "2022-10-10 10:21:31.447137",
+  "name": "Item Group",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ }
+]

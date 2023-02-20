@@ -1,2 +1,7 @@
-# diamondpharma
-migrate new aps on my local device
+## Diamondpharma
+
+diamondpharma customizations
+
+#### License
+
+MIT

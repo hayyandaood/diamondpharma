@@ -1,0 +1,7 @@
+## Diamondpharma
+
+diamondpharma customizations
+
+#### License
+
+MIT# frappe -- https://github.com/frappe/frappe is installed via 'bench init'
