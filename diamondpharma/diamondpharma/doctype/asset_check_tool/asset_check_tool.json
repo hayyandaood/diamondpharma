@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-24 07:19:33.275670",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "asset_category",
+  "column_break_2",
+  "periodic",
+  "date_checked",
+  "section_break_5",
+  "asset_html",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "asset_category",
+   "fieldtype": "Link",
+   "label": "Asset Category",
+   "options": "Asset Category"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "periodic",
+   "fieldtype": "Select",
+   "label": "Periodic",
+   "options": "Daily\nweekly\nMonthly\nQuartly\nHalf Yearly\nYearly"
+  },
+  {
+   "fieldname": "date_checked",
+   "fieldtype": "Date",
+   "label": "Date Checked"
+  },
+  {
+   "fieldname": "asset_html",
+   "fieldtype": "HTML",
+   "label": "Asset Html"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Asset Check Tool",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-04-24 07:27:04.832003",
+ "modified_by": "Administrator",
+ "module": "Diamondpharma",
+ "name": "Asset Check Tool",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

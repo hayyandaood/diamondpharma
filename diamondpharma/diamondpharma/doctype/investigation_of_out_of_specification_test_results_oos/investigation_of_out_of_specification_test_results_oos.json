@@ -1,0 +1,469 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:OOS-{######}",
+ "creation": "2022-06-20 13:17:57.422427",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "no",
+  "column_break_2",
+  "oos_date",
+  "column_break_4",
+  "product",
+  "environment_monitoring",
+  "column_break_7",
+  "water_test",
+  "raw_material",
+  "product_info_section",
+  "name1",
+  "dosage_form",
+  "column_break_9",
+  "main_batch_no",
+  "department",
+  "stage_section",
+  "ipc",
+  "intermediate_product",
+  "finished_product",
+  "column_break_14",
+  "final_product",
+  "returned_product",
+  "recalled_product",
+  "environment_info_section",
+  "settle_plates",
+  "area",
+  "surface_swabs",
+  "room",
+  "monitoring_of_personal_hygiene",
+  "workers",
+  "water_test_info_section",
+  "sample_point",
+  "column_break_27",
+  "wfi",
+  "column_break_29",
+  "pw",
+  "raw_material_info_section",
+  "raw_material_name",
+  "supplier",
+  "column_break_37",
+  "batch_no",
+  "section_break_39",
+  "1_description_of_oos",
+  "section_break_47",
+  "2_follw_up_investigation_steps",
+  "section_break_49",
+  "3_other_batches_products_possibly_affected",
+  "4_no_of_deviation_control_form",
+  "5_rework_reprocess_form_no",
+  "6_decision_on_this_batch_and_suspected_batches",
+  "7_corrective_action",
+  "change_control_form_no",
+  "section_break_49_1",
+  "qc_team_name",
+  "column_break_51",
+  "qc_date",
+  "section_break_53",
+  "qa_team_name",
+  "column_break_54",
+  "qa_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "no",
+   "fieldtype": "Data",
+   "label": "No."
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "oos_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "product",
+   "fieldtype": "Check",
+   "label": "Product"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "mandatory_depends_on": "eval:doc.product",
+   "reqd": 0
+  },
+  {
+   "fieldname": "dosage_form",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Dosage form",
+   "mandatory_depends_on": "eval:doc.product",
+   "reqd": 0
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_batch_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Batch No.",
+   "mandatory_depends_on": "eval:doc.product",
+   "reqd": 0
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Department",
+   "mandatory_depends_on": "eval:doc.product",
+   "reqd": 0
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "product",
+   "depends_on": "product",
+   "fieldname": "stage_section",
+   "fieldtype": "Section Break",
+   "label": "Stage:"
+  },
+  {
+   "default": "0",
+   "fieldname": "ipc",
+   "fieldtype": "Check",
+   "label": "IPC"
+  },
+  {
+   "default": "0",
+   "fieldname": "intermediate_product",
+   "fieldtype": "Check",
+   "label": "Intermediate Product"
+  },
+  {
+   "default": "0",
+   "fieldname": "finished_product",
+   "fieldtype": "Check",
+   "label": "Finished product"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "final_product",
+   "fieldtype": "Check",
+   "label": "Final product"
+  },
+  {
+   "default": "0",
+   "fieldname": "returned_product",
+   "fieldtype": "Check",
+   "label": "Returned product"
+  },
+  {
+   "default": "0",
+   "fieldname": "recalled_product",
+   "fieldtype": "Check",
+   "label": "Recalled product"
+  },
+  {
+   "default": "0",
+   "fieldname": "settle_plates",
+   "fieldtype": "Check",
+   "label": "Settle Plates"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area",
+   "mandatory_depends_on": "settle_plates",
+   "reqd": 0
+  },
+  {
+   "default": "0",
+   "fieldname": "surface_swabs",
+   "fieldtype": "Check",
+   "label": "Surface swabs"
+  },
+  {
+   "fieldname": "room",
+   "fieldtype": "Data",
+   "label": "Room",
+   "mandatory_depends_on": "surface_swabs",
+   "reqd": 0
+  },
+  {
+   "default": "0",
+   "fieldname": "monitoring_of_personal_hygiene",
+   "fieldtype": "Check",
+   "label": "Monitoring of Personal Hygiene"
+  },
+  {
+   "fieldname": "workers",
+   "fieldtype": "Data",
+   "label": "Workers",
+   "mandatory_depends_on": "monitoring_of_personal_hygiene",
+   "reqd": 0
+  },
+  {
+   "default": "0",
+   "fieldname": "water_test",
+   "fieldtype": "Check",
+   "label": "Water test"
+  },
+  {
+   "collapsible_depends_on": "water_test",
+   "fieldname": "sample_point",
+   "fieldtype": "Data",
+   "label": "Sample point"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "wfi",
+   "fieldtype": "Check",
+   "label": "WFI"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "pw",
+   "fieldtype": "Check",
+   "label": "PW"
+  },
+  {
+   "default": "0",
+   "fieldname": "raw_material",
+   "fieldtype": "Check",
+   "label": "Raw material"
+  },
+  {
+   "fieldname": "raw_material_name",
+   "fieldtype": "Data",
+   "label": "Raw material Name",
+   "mandatory_depends_on":"raw_material",
+   "reqd": 0
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "Supplier",
+   "mandatory_depends_on":"raw_material",
+   "reqd": 0
+  },
+  {
+   "fieldname": "column_break_37",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "label": "Batch no",
+   "mandatory_depends_on":"raw_material",
+   "reqd": 0
+  },
+  {
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "1_description_of_oos",
+   "fieldtype": "Long Text",
+   "label": "1. Description of OOS"
+  },
+  {
+   "fieldname": "section_break_47",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Assignment of acual or probable cause",
+   "fieldname": "2_follw_up_investigation_steps",
+   "fieldtype": "Long Text",
+   "label": "2. Follow up_Investigation steps"
+  },
+  {
+   "fieldname": "section_break_49",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "3_other_batches_products_possibly_affected",
+   "fieldtype": "Data",
+   "label": "3. Other batches_products possibly affected"
+  },
+  {
+   "description": "(if part of investigation)",
+   "fieldname": "4_no_of_deviation_control_form",
+   "fieldtype": "Data",
+   "label": "4. No. of Deviation control form"
+  },
+  {
+   "fieldname": "5_rework_reprocess_form_no",
+   "fieldtype": "Data",
+   "label": "5. Rework_reprocess Form No."
+  },
+  {
+   "fieldname": "6_decision_on_this_batch_and_suspected_batches",
+   "fieldtype": "Data",
+   "label": "6. Decision on this batch and suspected batches",
+   "reqd": 0
+  },
+  {
+   "fieldname": "7_corrective_action",
+   "fieldtype": "Long Text",
+   "label": "7. Corrective Action",
+   "reqd": 0
+  },
+  {
+   "fieldname": "change_control_form_no",
+   "fieldtype": "Data",
+   "label": "Change control form No."
+  },
+  {
+   "fieldname": "section_break_49_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qc_team_name",
+   "fieldtype": "Data",
+   "label": "QC team Name",
+   "reqd": 0
+  },
+  {
+   "fieldname": "column_break_51",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qc_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 0
+  },
+  {
+   "fieldname": "section_break_53",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qa_team_name",
+   "fieldtype": "Data",
+   "label": "QA team Name",
+   "reqd": 0
+  },
+  {
+   "fieldname": "column_break_54",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qa_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 0
+  },
+  {
+   "default": "0",
+   "fieldname": "environment_monitoring",
+   "fieldtype": "Check",
+   "label": "Environment Monitoring"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "environment_monitoring",
+   "depends_on": "environment_monitoring",
+   "fieldname": "environment_info_section",
+   "fieldtype": "Section Break",
+   "label": "Environment info"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "water_test",
+   "depends_on": "water_test",
+   "fieldname": "water_test_info_section",
+   "fieldtype": "Section Break",
+   "label": "Water test info"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "raw_material",
+   "depends_on": "raw_material",
+   "fieldname": "raw_material_info_section",
+   "fieldtype": "Section Break",
+   "in_filter": 1,
+   "label": "Raw Material info"
+  },
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "product",
+   "depends_on": "product",
+   "fieldname": "product_info_section",
+   "fieldtype": "Section Break",
+   "label": "product info"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Investigation of Out of Specification Test Results_OOS",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-01-23 08:12:24.198706",
+ "modified_by": "Administrator",
+ "module": "Diamondpharma",
+ "name": "Investigation of Out of Specification Test Results_OOS",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-27 09:07:15.804132",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "leftover",
+  "original_qty",
+  "qty",
+  "uom",
+  "item_code",
+  "qty_percent",
+  "qty_for_use"
+ ],
+ "fields": [
+  {
+   "fieldname": "leftover",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Leftover",
+   "options": "Leftover",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "leftover.qty",
+   "fetch_if_empty": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty."
+  },
+  {
+   "fetch_from": "leftover.uom",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "leftover.qty",
+   "fieldname": "original_qty",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Original Qty.",
+   "width": "1"
+  },
+  {
+   "fetch_from": "leftover.production_item",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty_percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Qty. Percent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty_for_use",
+   "fieldtype": "Float",
+   "label": "Qty for use",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-12 23:50:44.322850",
+ "modified_by": "Administrator",
+ "module": "Diamondpharma",
+ "name": "Leftover Usage",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

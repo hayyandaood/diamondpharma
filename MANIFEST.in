@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include diamondpharma *.css
+recursive-include diamondpharma *.csv
+recursive-include diamondpharma *.html
+recursive-include diamondpharma *.ico
+recursive-include diamondpharma *.js
+recursive-include diamondpharma *.json
+recursive-include diamondpharma *.md
+recursive-include diamondpharma *.png
+recursive-include diamondpharma *.py
+recursive-include diamondpharma *.svg
+recursive-include diamondpharma *.txt
+recursive-exclude diamondpharma *.pyc

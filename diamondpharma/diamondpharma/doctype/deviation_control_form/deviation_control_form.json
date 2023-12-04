@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:DCF-#####",
+ "creation": "2022-06-21 14:25:19.477889",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "no",
+  "column_break_2",
+  "date",
+  "section_break_4",
+  "department",
+  "column_break_6",
+  "name1",
+  "section_break_8",
+  "title",
+  "section_break_10",
+  "description_of_deviation",
+  "following_up",
+  "deviation_correction_and_controlling_its_effects",
+  "root_cause_analysis___root_cause",
+  "corrective_action",
+  "related_documents",
+  "data_17",
+  "data_18",
+  "dcf_date",
+  "column_break_20",
+  "dcf_name",
+  "column_break_22",
+  "dcf_title",
+  "deviation_control_team"
+ ],
+ "fields": [
+  {
+   "fieldname": "no",
+   "fieldtype": "Data",
+   "label": "No."
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description_of_deviation",
+   "fieldtype": "Long Text",
+   "label": "Description of Deviation"
+  },
+  {
+   "fieldname": "following_up",
+   "fieldtype": "Long Text",
+   "label": "Following up"
+  },
+  {
+   "fieldname": "deviation_correction_and_controlling_its_effects",
+   "fieldtype": "Long Text",
+   "label": "Deviation Correction and controlling its effects"
+  },
+  {
+   "fieldname": "root_cause_analysis___root_cause",
+   "fieldtype": "Long Text",
+   "label": "Root cause analysis _ Root cause"
+  },
+  {
+   "fieldname": "corrective_action",
+   "fieldtype": "Long Text",
+   "label": "Corrective Action"
+  },
+  {
+   "description": "(OOS, DEV and Change control)",
+   "fieldname": "related_documents",
+   "fieldtype": "Long Text",
+   "label": "Related Documents"
+  },
+  {
+   "fieldname": "data_17",
+   "fieldtype": "Data",
+   "label": "Deviation Controled"
+  },
+  {
+   "fieldname": "data_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "dcf_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dcf_name",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dcf_title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "deviation_control_team",
+   "fieldtype": "Data",
+   "label": "Deviation Control Team"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-01 22:12:07.148346",
+ "modified_by": "Administrator",
+ "module": "Diamondpharma",
+ "name": "Deviation Control Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-02 15:46:34.208855",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "under_production_percent_allowance"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "under_production_percent_allowance",
+   "fieldtype": "Percent",
+   "label": "Under Production Percent Allowance",
+   "precision": "0"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-08-02 15:48:16.892925",
+ "modified_by": "Administrator",
+ "module": "Diamondpharma",
+ "name": "Manufacturing Custom Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

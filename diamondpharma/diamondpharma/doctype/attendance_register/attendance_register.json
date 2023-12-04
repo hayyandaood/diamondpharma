@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_copy": 1,
+ "allow_events_in_timeline": 1,
+ "autoname": "format:ATT_REG@{YYYY}/{MM}/{DD}#{#####}",
+ "creation": "2022-11-18 18:47:38.502386",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "column_break_2",
+  "register_date",
+  "column_break",
+  "amended_from",
+  "register_notes",
+  "section_break_5",
+  "check_attendance_section",
+  "department",
+  "column_break_10",
+  "check_attendant_employees",
+  "section_break_12",
+  "attendance_sheet"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "register_date",
+   "fieldtype": "Date",
+   "label": "Register Date",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Attendance Register",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "register_notes",
+   "fieldtype": "Data",
+   "label": "Register Notes"
+  },
+  {
+   "fieldname": "attendance_sheet",
+   "fieldtype": "Table",
+   "label": "Attendance Sheet",
+   "options": "Attendance Register Detail"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "check_attendance_section",
+   "fieldtype": "Section Break",
+   "label": "Check Attendance"
+  },
+  {
+   "depends_on": "eval:doc.docstatus==0",
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.docstatus==0",
+   "fieldname": "check_attendant_employees",
+   "fieldtype": "Button",
+   "label": "Check Attendant Employees"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-12-04 08:35:27.519260",
+ "modified_by": "Administrator",
+ "module": "Diamondpharma",
+ "name": "Attendance Register",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "register_date",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "register_date",
+ "track_changes": 1
+}

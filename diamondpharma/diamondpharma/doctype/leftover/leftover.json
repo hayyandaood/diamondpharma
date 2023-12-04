@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_rename": 1,
+ "autoname": "format:LFT-#{#####}@{job_card}.{work_order}",
+ "creation": "2022-08-22 09:49:01.781079",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_section",
+  "work_order",
+  "column_break_3",
+  "job_card",
+  "column_break_5",
+  "operation",
+  "column_break_7",
+  "workstation",
+  "section_break_9",
+  "production_item",
+  "column_break_11",
+  "item_name",
+  "section_break_12",
+  "qty",
+  "column_break_15",
+  "uom",
+  "used_qty",
+  "remaining_quantity_for_use",
+  "amended_from",
+  "section_break_18",
+  "items"
+ ],
+ "fields": [
+  {
+   "fetch_from": "job_card.work_order",
+   "fieldname": "work_order",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Work Order",
+   "options": "Work Order",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "work_order.production_item",
+   "fieldname": "production_item",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_preview": 1,
+   "label": "Production Item",
+   "options": "Item",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "production_item.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Item Name"
+  },
+  {
+   "fetch_from": "job_card.operation",
+   "fetch_if_empty": 1,
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "label": "Operation",
+   "options": "Operation",
+   "read_only": 1
+  },
+  {
+   "fetch_if_empty": 1,
+   "fieldname": "job_card",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "label": "Job Card",
+   "options": "Job Card",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "operation.workstation",
+   "fetch_if_empty": 1,
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "label": "Workstation",
+   "options": "Workstation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Qty",
+   "non_negative": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Leftover",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Leftover Components",
+   "options": "Leftover Component item",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "used_qty",
+   "fieldtype": "Read Only",
+   "label": "Used Qty."
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remaining_quantity_for_use",
+   "fieldtype": "Float",
+   "in_global_search": 1,
+   "in_preview": 1,
+   "label": "Remaining quantity for use",
+   "read_only": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-04-12 23:08:42.324714",
+ "modified_by": "Administrator",
+ "module": "Diamondpharma",
+ "name": "Leftover",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "production_item,qty,remaining_quantity_for_use",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
