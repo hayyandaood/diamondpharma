@@ -122,7 +122,11 @@ override_doctype_class = {
 # }
 #	}
 
-doc_events = {"Salary Slip" : {"validate": "diamondpharma.diamondpharma.api.get_totals_validate"}}
+doc_events = {
+	"Salary Slip" : {"validate": "diamondpharma.diamondpharma.api.get_totals_validate"},
+	"Purchase Order": {"before_submit": "diamondpharma.diamondpharma.new_purchase_order.validate_budget_limits"},
+    "Purchase Order": {"validate": "diamondpharma.diamondpharma.new_purchase_order.check_purchase_order_item"}
+}
 
 # Scheduled Tasks
 # ---------------

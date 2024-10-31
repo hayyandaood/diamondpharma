@@ -6,11 +6,52 @@ from frappe.query_builder.functions import Sum, Count
 
 from frappe.query_builder import DocType
 
-from erpnext.payroll.doctype.salary_slip.salary_slip import SalarySlip
+#from erpnext.payroll.doctype.salary_slip.salary_slip import SalarySlip
 
 import datetime
 
 
+def swap_batches(item1 = 'Telmi-40-30-TABLET-.-ألمنيوم', item2 = 'Telmi-80-30-TABLET-.-ألمنيوم', batch1 = 'P485-23' , batch2 = 'P497-23'):
+     # Get all Stock Ledger Entries where the batches need to be swapped
+    stock_ledger_entries = frappe.get_all(
+        'Stock Ledger Entry',
+        filters=[
+            ['item_code', 'in', [item1, item2]],
+            ['batch_no', 'in', [batch1, batch2]]
+        ],
+        fields=['name', 'item_code', 'batch_no']
+    )
+
+    # Update batch numbers in Stock Ledger Entry
+    for doc in stock_ledger_entries:
+        if doc['item_code'] == item1 and doc['batch_no'] == batch1:
+            frappe.db.set_value('Stock Ledger Entry', doc['name'], 'batch_no', batch2)
+
+        elif doc['item_code'] == item2 and doc['batch_no'] == batch2:
+            frappe.db.set_value('Stock Ledger Entry', doc['name'], 'batch_no', batch1)
+
+    # Get all Stock Entry Details where the batches need to be swapped
+    stock_entry_details = frappe.get_all(
+        'Stock Entry Detail',
+        filters=[
+            ['item_code', 'in', [item1, item2]],
+            ['batch_no', 'in', [batch1, batch2]]
+        ],
+        fields=['name', 'parent', 'item_code', 'batch_no']
+    )
+
+    # Update batch numbers in Stock Entry Detail
+    for detail in stock_entry_details:
+        if detail['item_code'] == item1 and detail['batch_no'] == batch1:
+            frappe.db.set_value('Stock Entry Detail', detail['name'], 'batch_no', batch2)
+
+        elif detail['item_code'] == item2 and detail['batch_no'] == batch2:
+            frappe.db.set_value('Stock Entry Detail', detail['name'], 'batch_no', batch1)
+
+    # Commit the changes to the database
+    frappe.db.commit()
+    
+    return "Batch numbers swapped successfully in Stock Ledger Entry and Stock Entry Detail"
 
 #def calculate_tax(amount):
 
@@ -44,7 +85,7 @@ import datetime
 
 #	return tax_amount
 
-def calculate_tax(amount):
+def calculate_tax(amount = 60000):
 
 	tax_amount = 0
 
@@ -144,21 +185,21 @@ def retrive_totals(employee, from_start,base_amount):
 	}
 	return result
 
-class SalarySlipOverride(SalarySlip):
-	def get_data_for_eval(self):
+# class SalarySlipOverride(SalarySlip):
+# 	def get_data_for_eval(self):
 
-		data, default_data = super().get_data_for_eval()
+# 		data, default_data = super().get_data_for_eval()
 		
-		totals = retrive_totals(
-			data.get("employee"),
-			data.get("start_date"),
-			data.get("base") * 0.93 )
+# 		totals = retrive_totals(
+# 			data.get("employee"),
+# 			data.get("start_date"),
+# 			data.get("base") * 0.93 )
 		
-		data.update(totals)
-		default_data.update(totals)
+# 		data.update(totals)
+# 		default_data.update(totals)
 
-#		print(data)
-		return data, default_data
+# #		print(data)
+# 		return data, default_data
 
 
 
@@ -195,3 +236,25 @@ def get_totals_validate(doc , method=None):
 			doc.rounded_total=amt
 	
 
+def swap_a_batches(batch1 = 'P485-23', batch2='P497-23'):
+    temp_batch = batch1 + "_temp"
+    frappe.rename_doc('Batch', batch1, temp_batch)
+    frappe.rename_doc('Batch', batch2, batch1)
+    frappe.rename_doc('Batch', temp_batch, batch2)
+    frappe.db.commit()
+
+    return "Batches swapped successfully."
+
+@frappe.whitelist()
+def get_problems_by_category(chcategory):
+    problems = []
+    related_issue_type = {}
+    child_category = frappe.get_doc("Child Categories", chcategory)
+    for issue in child_category.category_issues:
+        problems.append(issue.problem)  # Add the problem name
+        related_issue_type[issue.problem] = issue.related_issue_type_link  # Map problem to related issue type
+
+    return {
+        "problems": problems,  # List of problems
+        "related_issue_type": related_issue_type  # Mapping problem to issue type
+       }

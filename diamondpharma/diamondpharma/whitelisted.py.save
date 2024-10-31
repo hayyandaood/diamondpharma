@@ -125,34 +125,34 @@ def make_work_order(bom_no, item, qty=0, project=None, variant_items=None):
 #     return stock_entry.as_dict()
 
 @frappe.whitelist()
+def update_customer_invoice_number(doc_name='ACC-SINV-2024-00256'):
+    sales_invoice = frappe.get_doc("Sales Invoice", doc_name)
+    if sales_invoice.items:
+        first_item = sales_invoice.items[0]
+        sales_order_name = first_item.sales_order
+
+        if sales_order_name:
+            sales_order = frappe.get_doc("Sales Order", sales_order_name)
+
+            customer_order_number = sales_order.get("custom_customer_order_number")
+            return customer_order_number
+
+    frappe.logger().info("No items found in Sales Invoice or Sales Order not linked.")
+    return "No itemhitelist()
 def update_customer_invoice_number(doc_name=None):
-    try:
-        # Fetch the Sales Invoice document
-        sales_invoice = frappe.get_doc("Sales Invoice", doc_name)
+    sales_invoice = frappe.get_doc("Sales Invoice", doc_name)
+    if sales_invoice.items:
+        first_item = sales_invoice.items[0]
+        sales_order_name = first_item.sales_order
 
-        if sales_invoice.items:
-            # Get the first item and its associated Sales Order
-            first_item = sales_invoice.items[0]
-            sales_order_name = first_item.sales_order
+        if sales_order_name:
+            sales_order = frappe.get_doc("Sales Order", sales_order_name)
 
-            if sales_order_name:
-                # Fetch the Sales Order document
-                sales_order = frappe.get_doc("Sales Order", sales_order_name)
+            customer_order_number = sales_order.get("custom_customer_order_number")
+            sales_invoice.custom_customer_invoice_number = customer_order_number
+        frappe.logger().info("found in Sales Order Number.")
+        sales_invoice.save(ignore_permissions=True)
+        frappe.db.commit()
 
-                # Get the custom customer order number from the Sales Order
-                customer_order_number = sales_order.get("custom_customer_order_number")
-                
-                # Update the custom_customer_invoice_number field
-                sales_invoice.custom_customer_invoice_number = customer_order_number
-                sales_invoice.save(ignore_permissions=True)
-                frappe.db.commit()
-                
-                frappe.logger().info(f"Updated custom_customer_invoice_number to {customer_order_number} for Sales Invoice {doc_name}.")
-                return "Success"
-
-        frappe.logger().info(f"No items found in Sales Invoice {doc_name} or Sales Order not linked.")
-        return "No items found in Sales Invoice or Sales Order not linked."
-
-    except Exception as e:
-        frappe.logger().error(f"Error updating custom_customer_invoice_number for Sales Invoice {doc_name}: {str(e)}")
-        return str(e)
+    frappe.logger().info("No items found in Sales Invoice or Sales Order not linked.")
+    return "No items found in Sales Invoice or Sales Order not linked."
